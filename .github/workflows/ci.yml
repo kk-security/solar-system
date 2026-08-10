@@ -9,7 +9,7 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   deploy_to_production:
     runs-on: ubuntu-latest
-    environment: production # Connects this job to your 'production' configuration
+    environment: production-env # Connects this job to your 'production' configuration
     steps:
       - name: Deploying code
         run: echo "Deploying with access to production secrets..."
