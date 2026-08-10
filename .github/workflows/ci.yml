@@ -7,8 +7,14 @@ jobs:
       node-version: '20'
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  deploy_to_production:
+    runs-on: ubuntu-latest
+    environment: production # Connects this job to your 'production' configuration
+    steps:
+      - name: Deploying code
+        run: echo "Deploying with access to production secrets..."
   test-composite-action:
-     runs-on: [ubuntu-latest]
+     runs-on: [self-hosted]
      environment: production
      steps:
         - uses: kk-security/lab-actions@main
